@@ -355,6 +355,10 @@ $(function() {
         cancel = false;
         final_transcript = '';
         $('#final_span').text('');
+    }
+
+    function closeSearcher() {
+        reset();
         document.querySelector("#searcher-wrapper").classList.remove("active-search");
     }
 
