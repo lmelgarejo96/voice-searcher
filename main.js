@@ -152,6 +152,7 @@ $(function() {
 
     // Main start event
     $('#button-search').on('mousedown touchstart', function() {
+        if (!navigator.getUserMedia || !navigator.webkitGetUserMedia) activateMicrophone();
         if (cancel) {
             TweenMax.killAll();
             reset();
@@ -415,27 +416,31 @@ $(function() {
             })
         }
     }
-    // creates an audiocontext and hooks up the audio input
-    var context = new AudioContext();
-    navigator.webkitGetUserMedia({
-        audio: true
-    }, function(stream) {
-        console.log("Connected live audio input");
-        if (!analyser) {
-            liveSource = context.createMediaStreamSource(stream);
-            // Create the analyser
-            analyser = context.createAnalyser();
-            analyser.smoothingTimeConstant = 0.3;
-            analyser.fftSize = 64;
-            frequencyData = new Uint8Array(analyser.frequencyBinCount);
-            liveSource.connect(analyser);
-        };
-        update();
-    }, function() {
-        console.log('Error connecting to audio')
-    });
 
+    function activateMicrophone() {
+        // creates an audiocontext and hooks up the audio input
+        var context = new AudioContext();
+        navigator.webkitGetUserMedia({
+            audio: true
+        }, function(stream) {
+            console.log("Connected live audio input");
+            if (!analyser) {
+                liveSource = context.createMediaStreamSource(stream);
+                // Create the analyser
+                analyser = context.createAnalyser();
+                analyser.smoothingTimeConstant = 0.3;
+                analyser.fftSize = 64;
+                frequencyData = new Uint8Array(analyser.frequencyBinCount);
+                liveSource.connect(analyser);
+            };
+            update();
+        }, function() {
+            console.log('Error connecting to audio')
+        });
+    }
 });
+
+
 
 /// ##### BASIC UTILS #####
 
