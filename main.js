@@ -357,9 +357,10 @@ $(function() {
         $('#final_span').text('');
     }
 
+    /// ##### BASIC UTILS #####
     function closeSearcher() {
-        reset();
         document.querySelector("#searcher-wrapper").classList.remove("active-search");
+        reset();
     }
 
     function showTip() {
@@ -391,19 +392,19 @@ $(function() {
                     autoAlpha: 0.75
                 })
                 /*
-                    TweenMax.set($('#viz1'), {
-                      scaleX: (((frequencyData[8] + 1) / 95) / scaling),
-                      scaleY: (((frequencyData[23] + 1) / 110) / scaling)
-                    })
-                    TweenMax.set($('#viz2'), {
-                      scaleX: (((frequencyData[10] + 1) / 100) / scaling),
-                      scaleY: (((frequencyData[21] + 1) / 105) / scaling)
-                    })
-                    TweenMax.set($('#viz3'), {
-                      scaleX: (((frequencyData[12] + 1) / 110) / scaling),
-                      scaleY: (((frequencyData[19] + 1) / 95) / scaling)
-                    })
-                */
+                TweenMax.set($('#viz1'), {
+                          scaleX: (((frequencyData[8] + 1) / 95) / scaling),
+                          scaleY: (((frequencyData[23] + 1) / 110) / scaling)
+                        })
+                        TweenMax.set($('#viz2'), {
+                            scaleX: (((frequencyData[10] + 1) / 100) / scaling),
+                            scaleY: (((frequencyData[21] + 1) / 105) / scaling)
+                        })
+                        TweenMax.set($('#viz3'), {
+                          scaleX: (((frequencyData[12] + 1) / 110) / scaling),
+                          scaleY: (((frequencyData[19] + 1) / 95) / scaling)
+                        })
+                    */
 
             TweenMax.set($('#viz1'), {
                 scale: (((frequencyData[8] + 1) / 100) / scaling)
@@ -442,11 +443,13 @@ $(function() {
             console.log('Error connecting to audio')
         });
     }
+
+    document.querySelector("#btn-close-search").addEventListener("click", closeSearcher)
 });
 
 
 
-/// ##### BASIC UTILS #####
+
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
