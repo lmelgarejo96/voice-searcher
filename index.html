@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to text</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <ul>
+        <li>
+            <a title="Ir a facebook" href="https://facebook.com">Facebook</a>
+        </li>
+        <li>
+            <a title="Ir a Twittwer" href="https://twitter.com">Twitter</a>
+        </li>
+        <li>
+            <a title="It a instagram" href="https://Instagram.com">Instagram</a>
+        </li>
+        <li>
+            <a title="Ir a youtube" href="https://Facebook.com">Youtube</a>
+        </li>
+    </ul>
+
+    <!-- Buscador -->
+    <div id="searcher-wrapper" class="searcher-wrapper">
+
+        <button onclick="reset()" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"/></svg></button>
+        <div id="results">
+            <span id="final_span" class="final"></span>
+            <span id="interim_span" class="interim"></span>
+            <p>
+        </div>
+        <div id="visualization"></div>
+        <div id="viz1" class="visual"></div>
+        <div id="viz2" class="visual"></div>
+        <div id="viz3" class="visual"></div>
+        <div id="viz4" class="visual"></div>
+        <div id="tip">Mantén presionado al hablar</div>
+    </div>
+    <div id="button-search">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="microphone" data-container-transform="translate(3)" viewBox="0 0 16 20" x="0px" y="0px"><path d="M4.5 0c-1.4 0-2.5 1.1-2.5 2.5v5c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5v-5c0-1.4-1.1-2.5-2.5-2.5zm-4.125 6.188a.5.5 0 0 0-.375.5v.813c0 2.302 1.763 4.184 4 4.438v3.063h-2c-.6 0-1 .4-1 1h7c0-.6-.4-1-1-1h-2v-3.063c2.237-.254 4-2.136 4-4.438v-.813a.5.5 0 1 0-1 0v.813c0 1.927-1.573 3.5-3.5 3.5s-3.5-1.573-3.5-3.5v-.813a.5.5 0 0 0-.563-.5.5.5 0 0 0-.063 0z" transform="translate(3)"/></svg>
+        <div id="contents"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
